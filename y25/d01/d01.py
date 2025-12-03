@@ -1,13 +1,25 @@
 from utils import read_input
 
-def star1() -> str:
-    input = read_input(1, True)
-    
-    return ""
+DIAL_START = 50
+MOD = 100
 
-def star2() -> str:
-    return ""
+def star1(test: bool=False) -> str:
+    input = read_input(1, test)
 
-if __name__ == "__main__":
-    print(f"Star 1: {star1()}")
-    print(f"Star 2: {star2()}")
+    curr = DIAL_START
+    num_zero = 0
+
+    for line in input:
+        pol = 1 if line[0] == 'R' else -1
+        num = int(line[1:])
+
+        curr = (curr + pol * num) % MOD
+
+        if curr == 0:
+            num_zero += 1
+
+    return str(num_zero)
+
+def star2(test: bool=False) -> str:
+    input = read_input(1, test)
+    return ""

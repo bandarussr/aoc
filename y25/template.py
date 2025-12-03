@@ -1,11 +1,9 @@
-from y25.utils import read_input
+from utils import read_input
 
-def star1() -> str:
+def star1(test: bool=False) -> str:
+    input = read_input(999, test)
     return ""
 
-def star2() -> str:
+def star2(test: bool=False) -> str:
+    input = read_input(999, test)
     return ""
-
-if __name__ == "__main__":
-    print(f"Star 1: {star1()}")
-    print(f"Star 2: {star2()}")
